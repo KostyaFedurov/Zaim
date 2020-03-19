@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:631291171731:android:f99a6cbd0fa6b309e88e66",
+        "android_client_info": {
+          "package_name": "ru.Mymoneyloan.ua"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631291171731-6ncvbu6bg7qun3l2msds5ibnogu0q3ko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEg_P5-P6RZyn1FxV2Pev-EOLBEgrALkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631291171731-6ncvbu6bg7qun3l2msds5ibnogu0q3ko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:631291171731:android:26bc236e2623ba45e88e66",
         "android_client_info": {
           "package_name": "ru.fedurovkostya.myapplication"

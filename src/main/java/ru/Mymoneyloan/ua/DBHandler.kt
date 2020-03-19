@@ -1,4 +1,4 @@
-package ru.fedurovkostya.myapplication
+package ru.Mymoneyloan.ua
 
 import android.content.ContentValues
 import android.content.Context
@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 class DBHandler(val context: Context): SQLiteOpenHelper(context,
-    DB_NAME,null,
-    DB_VERSION
+        DB_NAME,null,
+        DB_VERSION
 ){
     //создание бд
     override fun onCreate(db: SQLiteDatabase) {
@@ -16,12 +16,14 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
                 "$COL_IMAGE integer," +
                 "$COL_FULL_INFO text," +
                 "$COL_SHORT_INFO text," +
-                "$COL_URL text" +
+                "$COL_URL text," +
+                "$COL_NAME text" +
                 ");"
         db.execSQL(createCompanyTable)
 
         //мандарино
         val cv = ContentValues()
+        cv.put(COL_NAME,"мандарино")
         cv.put(COL_FULL_INFO,"Первый займ под 0%\n" +
                 "Оформление за 10 минут\n")
         cv.put(COL_URL,"https://pxl.leads.su/click/74435be1b40eff91ab806155510ac51b")
@@ -29,8 +31,9 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         cv.put(COL_SHORT_INFO,"\n" +
                 "от 50 до 15000 грн первый кредит до 0,01%")
         db.insert(TABLE_TASK,null,cv)
-        //Alex Сredit
+        //Alex_Сredit
         val cv1 = ContentValues()
+        cv1.put(COL_NAME,"Alex_Сredit")
         cv1.put(COL_FULL_INFO,"Скидка на первый кредит 100%\n" +
                 "Получите до 12000 грн.\n")
         cv1.put(COL_URL,"https://pxl.leads.su/click/c9661d12dc51bbd488b589fabf0f7145")
@@ -40,6 +43,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv1)
         //Money4you
         val cv2 = ContentValues()
+        cv2.put(COL_NAME,"Money4you")
         cv2.put(COL_FULL_INFO,"Оформление кредита за 5 минут\n" +
                 "Оформите до 10.000 грн.\n" +
                 "Возможность продления кредита\n")
@@ -50,6 +54,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv2)
         //Credit7
         val cv3 = ContentValues()
+        cv3.put(COL_NAME,"Credit7")
         cv3.put(COL_FULL_INFO,"Одобрение кредита за 5 минут\n" +
                 "Получите до 10.000 грн.\n" +
                 "Первый кредит пол 0.01%\n")
@@ -59,6 +64,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv3)
         //Gofingo
         val cv4 = ContentValues()
+        cv4.put(COL_NAME,"Gofingo")
         cv4.put(COL_FULL_INFO,"Первый кредит пол 0.01%\n" +
                 "Получите до 10.000 грн.\n" +
                 "Быстрое оформление онлайн\n")
@@ -69,6 +75,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv4)
         //Moneyveo
         val cv5 = ContentValues()
+        cv5.put(COL_NAME,"Moneyveo")
         cv5.put(COL_FULL_INFO,"Кредит на карту до 20.000 грн.\n" +
                 "Прозрачная ставка по кредитам\n" +
                 "Программа лояльности для постоянных клиентов\n")
@@ -79,6 +86,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv5)
         //Mycredit
         val cv6 = ContentValues()
+        cv6.put(COL_NAME,"Mycredit")
         cv6.put(COL_FULL_INFO,"Оформление до 12.000 грн.\n" +
                 "Одобрение за 5 минут\n" +
                 "Деньги поступают на карту без задержек\n")
@@ -87,8 +95,9 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         cv6.put(COL_SHORT_INFO,"\n" +
                 "от 500 до 15000 грн получение за 20 минут. Займ 0%")
         db.insert(TABLE_TASK,null,cv6)
-        //Eurogroshi Украина
+        //Eurogroshi_Украина
         val cv7 = ContentValues()
+        cv7.put(COL_NAME,"Eurogroshi_Украина")
         cv7.put(COL_FULL_INFO,"Простое оформление кредита до 10.000 грн.\n" +
                 "Требуется только паспорт\n")
         cv7.put(COL_URL,"https://pxl.leads.su/click/1615453e7948a044f07abb5e8215dc76")
@@ -98,6 +107,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv7)
         //ШвидкоГроші
         val cv8 = ContentValues()
+        cv8.put(COL_NAME,"ШвидкоГроші")
         cv8.put(COL_FULL_INFO,"Прозрачная ставка по кредиту\n" +
                 "Для оформления потребуется только паспорт\n" +
                 "Поступление денег на карту\n")
@@ -108,6 +118,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv8)
         //CreditUP
         val cv9 = ContentValues()
+        cv9.put(COL_NAME,"CreditUP")
         cv9.put(COL_FULL_INFO,"Моментальные решения по выдаче кредита\n" +
                 "Удобная онлайн заявка\n" +
                 "Рассчитайте Ваш кредит в калькуляторе\n")
@@ -118,6 +129,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv9)
         //СreditKasa
         val cv10 = ContentValues()
+        cv10.put(COL_NAME,"СreditKasa")
         cv10.put(COL_FULL_INFO,"Ставка 0.01% новым клиентам\n" +
                 "Удобное получение кредита\n" +
                 "Одобрение в течении 5 минут\n")
@@ -128,6 +140,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv10)
         //CreditPlus
         val cv11 = ContentValues()
+        cv11.put(COL_NAME,"CreditPlus")
         cv11.put(COL_FULL_INFO,"Получите до 10.000 грн. под 0.01% на карту\n" +
                 "Получите деньги с любой кредитной историей\n" +
                 "Персональные скидки постоянным клиентам\n")
@@ -136,8 +149,9 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         cv11.put(COL_SHORT_INFO,"\n" +
                 "от 500 до 10000 грн первый заем бесплатно")
         db.insert(TABLE_TASK,null,cv11)
-        //Ваша Готiвочка Украина
+        //Ваша_Готiвочка_Украина
         val cv12 = ContentValues()
+        cv12.put(COL_NAME,"Ваша_Готiвочка_Украина")
         cv12.put(COL_FULL_INFO,"Быстрая регистрация онлайн\n" +
                 "Выдача денег на карту в течении 10 минут\n")
         cv12.put(COL_URL,"https://pxl.leads.su/click/353e5aa5deaf6c84c34b73879ef9d09d")
@@ -145,8 +159,9 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         cv12.put(COL_SHORT_INFO,"\n" +
                 "от 300 до 10000 грн первый заем бесплатно")
         db.insert(TABLE_TASK,null,cv12)
-        //Globalcredit Украина
+        //Globalcredit_Украина
         val cv13 = ContentValues()
+        cv13.put(COL_NAME,"Globalcredit_Украина")
         cv13.put(COL_FULL_INFO,"Оформите до 15.000 грн. под 0.01%\n" +
                 "Программа лояльности для постоянных клиентов\n")
         cv13.put(COL_URL,"https://pxl.leads.su/click/a8cd2922e39ee8cc64cd69037f694a86")
@@ -154,8 +169,9 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         cv13.put(COL_SHORT_INFO,"\n" +
                 "от 500 до 20000 грн интересные условия")
         db.insert(TABLE_TASK,null,cv13)
-        //БЫСТРОЗАЙМ UA
+        //БЫСТРОЗАЙМ_UA
         val cv14 = ContentValues()
+        cv14.put(COL_NAME,"БЫСТРОЗАЙМ_UA")
         cv14.put(COL_FULL_INFO,"Оформите до 15.000 грн. под 0.01%\n" +
                 "Скидка 100% новым клиентам\n" +
                 "Ежемесячные бонусы и акции\n")
@@ -165,6 +181,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv14)
         //SOSCREDIT
         val cv15 = ContentValues()
+        cv15.put(COL_NAME,"SOSCREDIT")
         cv15.put(COL_FULL_INFO,"Оформление заявки за 10 минут\n" +
                 "Мгновенное получение денег \n" +
                 "Никаких очередей\n")
@@ -173,8 +190,9 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         cv15.put(COL_SHORT_INFO,"\n" +
                 "От 1000 - 10000 гривен. Деньги через 10 минут")
         db.insert(TABLE_TASK,null,cv15)
-        //e-cash
+        //e_cash
         val cv16 = ContentValues()
+        cv16.put(COL_NAME,"e_cash")
         cv16.put(COL_FULL_INFO,"Получите до 8.000 грн.\n" +
                 "Подберите удобный график выплат\n" +
                 "От Вас потребуется только паспорт\n")
@@ -185,6 +203,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv16)
         //MoneyBoom
         val cv17 = ContentValues()
+        cv17.put(COL_NAME,"MoneyBoom")
         cv17.put(COL_FULL_INFO,"Особые условия новым клиентам\n" +
                 "Поступление денег на карту\n" +
                 "Одобрение в течении 5 минут\n")
@@ -192,8 +211,9 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         cv17.put(COL_IMAGE,R.drawable.money_boom)
         cv17.put(COL_SHORT_INFO,"От 500 - 15000 гривен. Бесплатное досрочное погашение\n")
         db.insert(TABLE_TASK,null,cv17)
-        //Unex Bank
+        //Unex_Bank
         val cv18 = ContentValues()
+        cv18.put(COL_NAME,"Unex_Bank")
         cv18.put(COL_FULL_INFO,"Оформите кредит до 75.000 грн.\n" +
                 "Льготный период выплат\n")
         cv18.put(COL_URL,"https://pxl.leads.su/click/2c9daab6c76d872282f016d96775eb74")
@@ -202,6 +222,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv18)
         //MisterCash
         val cv19 = ContentValues()
+        cv19.put(COL_NAME,"MisterCash")
         cv19.put(COL_FULL_INFO,"Оформите до 15.000 грн. под 0.01%\n" +
                 "Прозрачная ставка по кредитам\n" +
                 "Особые условия новым клиентам\n")
@@ -210,8 +231,9 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         cv19.put(COL_SHORT_INFO,"\n" +
                 "От 500 - 20000 гривен. Выгодные условия. До 2% в день. 30% скидка на займ")
         db.insert(TABLE_TASK,null,cv19)
-        //Forza Credit
+        //Forza_Credit
         val cv20 = ContentValues()
+        cv20.put(COL_NAME,"Forza_Credit")
         cv20.put(COL_FULL_INFO,"Оформление до 12.000 грн.\n" +
                 "Одобрение за 5 минут\n" +
                 "Деньги поступают на карту без задержек\t\t")
@@ -220,8 +242,9 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         cv20.put(COL_SHORT_INFO,"\n" +
                 "От 250 - 15000 гривен всего за 7 минут. Регулярные акции. От 1% в день")
         db.insert(TABLE_TASK,null,cv20)
-        //My Wallet
+        //My_Wallet
         val cv21 = ContentValues()
+        cv21.put(COL_NAME,"My_Wallet")
         cv21.put(COL_FULL_INFO,"До 5000 грн. на свою банковскую карту\n" +
                 "ОФормление за 5 минут\n" +
                 "Повторные кредиты до 15.000 грн.\n")
@@ -229,8 +252,9 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         cv21.put(COL_IMAGE,R.drawable.my_wallet)
         cv21.put(COL_SHORT_INFO,"От 500 - 1000 гривен. Рассрочка до 1 года\n")
         db.insert(TABLE_TASK,null,cv21)
-        //Качай Грошi
+        //Качай_Грошi
         val cv22 = ContentValues()
+        cv22.put(COL_NAME,"Качай_Грошi")
         cv22.put(COL_FULL_INFO,"Оформите до 15.000 грн. под 0.01%\n" +
                 "Особые условия для новых клиентов\n" +
                 "Деньги поступают на  банковскую карту\n")
@@ -240,6 +264,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv22)
         //Mazilla
         val cv23 = ContentValues()
+        cv23.put(COL_NAME,"Mazilla")
         cv23.put(COL_FULL_INFO,"Оформление кредита не более 10 минут\n" +
                 "Персональные предложения каждому клиенту\n" +
                 "Кредит сроком до 91 дня\n")
@@ -249,6 +274,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv23)
         //ФКС
         val cv24 = ContentValues()
+        cv24.put(COL_NAME,"ФКС")
         cv24.put(COL_FULL_INFO,"Оформите до 15.000 грн. под 0.01%\n" +
                 "Удобная онлайн заявка\n" +
                 "Прозрачная ставка по кредиту\n")
@@ -258,6 +284,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv24)
         //Credilo
         val cv25 = ContentValues()
+        cv25.put(COL_NAME,"Credilo")
         cv25.put(COL_FULL_INFO,"Регистрация заявки за 5 минут\n" +
                 "Персональные предложения каждому\n" +
                 "Онлайн заявка на кредит\n")
@@ -265,8 +292,9 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         cv25.put(COL_IMAGE,R.drawable.credilo)
         cv25.put(COL_SHORT_INFO,"от 500 до 25000 грн за 15 минут\n")
         db.insert(TABLE_TASK,null,cv25)
-        //KLT Kredit
+        //KLT_Kredit
         val cv26 = ContentValues()
+        cv26.put(COL_NAME,"KLT_Kredit")
         cv26.put(COL_FULL_INFO,"Досрочное погашение кредита уменьшает проценты\n" +
                 "Оформите отсрочку выплат\n" +
                 "Без дополнительных комиссий\n")
@@ -276,6 +304,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv26)
         //UltraCash
         val cv27 = ContentValues()
+        cv27.put(COL_NAME,"UltraCash")
         cv27.put(COL_FULL_INFO,"Персональные условия для каждого клиента\n" +
                 "Решение за 5 минут\n" +
                 "Получите деньги на карту\n")
@@ -285,6 +314,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv27)
         //Сashбери
         val cv28 = ContentValues()
+        cv28.put(COL_NAME,"Сashбери")
         cv28.put(COL_FULL_INFO,"Кредит без справок о доходах\n" +
                 "Автоматическая система выдачи\n" +
                 "Особые условия постоянным клиентам\n")
@@ -294,6 +324,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv28)
         //Bestcredit
         val cv29 = ContentValues()
+        cv29.put(COL_NAME,"Bestcredit")
         cv29.put(COL_FULL_INFO,"Получите кредит сроком до 91 дня\n" +
                 "Моментальная обработка заявки \n" +
                 "Выдача кредита в онлайн режиме\n")
@@ -303,6 +334,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         db.insert(TABLE_TASK,null,cv29)
         //Навсе
         val cv30 = ContentValues()
+        cv30.put(COL_NAME,"Навсе")
         cv30.put(COL_FULL_INFO,"Удобный график платежей\n" +
                 "Неограниченное количество продлений\n" +
                 "Кредит под 1%\n")
@@ -310,193 +342,6 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
         cv30.put(COL_IMAGE,R.drawable.na_vse)
         cv30.put(COL_SHORT_INFO,"от 500 до 20000 грн интересные условия\n")
         db.insert(TABLE_TASK,null,cv30)
-    }
-    fun addCompanys(){
-//        val db = writableDatabase
-//        val cv = ContentValues()
-//        cv.put(COL_FULL_INFO,"от 300 до 3500 грн получение за 8 минут.Ставка от 1% в день")
-//        cv.put(COL_URL,"https://pxl.leads.su/click/ba501bc1a7b192633c22897f73066ae8")
-//        cv.put(COL_IMAGE,R.drawable.money_veo)
-//        cv.put(COL_SHORT_INFO,"от 300 до 3500 грн получение за 8 минут.Ставка от 1% в день")
-//        db.insert(TABLE_TASK,null,cv)
-//        val cv1 = ContentValues()
-//        cv1.put(COL_FULL_INFO,"от 500 до 15000 грн получение за 20 минут. Займ 0%")
-//        cv1.put(COL_URL,"\n" +
-//                "https://pxl.leads.su/click/7793a619debc3470e1d12d60c02c1f70")
-//        cv1.put(COL_IMAGE,R.drawable.my_credit)
-//        cv1.put(COL_SHORT_INFO,"от 500 до 15000 грн получение за 20 минут. Займ 0%")
-//        db.insert(TABLE_TASK,null,cv1)
-//        val cv2 = ContentValues()
-//        cv2.put(COL_FULL_INFO,"\n" +
-//                "от 500 до 3500 грн первый кредит под 0,9%")
-//        cv2.put(COL_URL,"\n" +
-//                "https://pxl.leads.su/click/1615453e7948a044f07abb5e8215dc76")
-//        cv2.put(COL_IMAGE,R.drawable.euro_groshi)
-//        cv2.put(COL_SHORT_INFO,"\n" +
-//                "от 500 до 3500 грн первый кредит под 0,9%")
-//        db.insert(TABLE_TASK,null,cv2)
-//        val cv3 = ContentValues()
-//        cv3.put(COL_FULL_INFO,"")
-//        cv3.put(COL_URL,"")
-//        cv3.put(COL_IMAGE,)
-//        cv3.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv3)
-//        val cv4 = ContentValues()
-//        cv4.put(COL_FULL_INFO,"")
-//        cv4.put(COL_URL,"")
-//        cv4.put(COL_IMAGE,)
-//        cv4.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv4)
-//        val cv5 = ContentValues()
-//        cv5.put(COL_FULL_INFO,"")
-//        cv5.put(COL_URL,"")
-//        cv5.put(COL_IMAGE,)
-//        cv5.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv5)
-//        val cv6 = ContentValues()
-//        cv6.put(COL_FULL_INFO,"")
-//        cv6.put(COL_URL,"")
-//        cv6.put(COL_IMAGE,)
-//        cv6.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv6)
-//        val cv7 = ContentValues()
-//        cv7.put(COL_FULL_INFO,"")
-//        cv7.put(COL_URL,"")
-//        cv7.put(COL_IMAGE,)
-//        cv7.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv7)
-//        val cv8 = ContentValues()
-//        cv8.put(COL_FULL_INFO,"")
-//        cv8.put(COL_URL,"")
-//        cv8.put(COL_IMAGE,)
-//        cv8.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv8)
-//        val cv9 = ContentValues()
-//        cv9.put(COL_FULL_INFO,"")
-//        cv9.put(COL_URL,"")
-//        cv9.put(COL_IMAGE,)
-//        cv9.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv9)
-//        val cv10 = ContentValues()
-//        cv10.put(COL_FULL_INFO,"")
-//        cv10.put(COL_URL,"")
-//        cv10.put(COL_IMAGE,)
-//        cv10.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv10)
-//        val cv11 = ContentValues()
-//        cv11.put(COL_FULL_INFO,"")
-//        cv11.put(COL_URL,"")
-//        cv11.put(COL_IMAGE,)
-//        cv11.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv11)
-//        val cv12 = ContentValues()
-//        cv12.put(COL_FULL_INFO,"")
-//        cv12.put(COL_URL,"")
-//        cv12.put(COL_IMAGE,)
-//        cv12.put(COL_SHORT_INFO,"")
-//        db12.insert(TABLE_TASK,null,cv12)
-//        val cv13 = ContentValues()
-//        cv13.put(COL_FULL_INFO,"")
-//        cv13.put(COL_URL,"")
-//        cv13.put(COL_IMAGE,)
-//        cv13.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv13)
-//        val cv14 = ContentValues()
-//        cv14.put(COL_FULL_INFO,"")
-//        cv14.put(COL_URL,"")
-//        cv14.put(COL_IMAGE,)
-//        cv14.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv14)
-//        val cv15 = ContentValues()
-//        cv15.put(COL_FULL_INFO,"")
-//        cv15.put(COL_URL,"")
-//        cv15.put(COL_IMAGE,)
-//        cv15.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv15)
-//        val cv16 = ContentValues()
-//        cv16.put(COL_FULL_INFO,"")
-//        cv16.put(COL_URL,"")
-//        cv16.put(COL_IMAGE,)
-//        cv16.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv16)
-//        val cv17 = ContentValues()
-//        cv17.put(COL_FULL_INFO,"")
-//        cv17.put(COL_URL,"")
-//        cv17.put(COL_IMAGE,)
-//        cv17.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv17)
-//        val cv18 = ContentValues()
-//        cv18.put(COL_FULL_INFO,"")
-//        cv18.put(COL_URL,"")
-//        cv18.put(COL_IMAGE,)
-//        cv18.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv18)
-//        val cv19 = ContentValues()
-//        cv19.put(COL_FULL_INFO,"")
-//        cv19.put(COL_URL,"")
-//        cv19.put(COL_IMAGE,)
-//        cv19.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv19)
-//        val cv20 = ContentValues()
-//        cv20.put(COL_FULL_INFO,"")
-//        cv20.put(COL_URL,"")
-//        cv20.put(COL_IMAGE,)
-//        cv20.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv20)
-//        val cv21 = ContentValues()
-//        cv21.put(COL_FULL_INFO,"")
-//        cv21.put(COL_URL,"")
-//        cv21.put(COL_IMAGE,)
-//        cv21.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv21)
-//        val cv22 = ContentValues()
-//        cv22.put(COL_FULL_INFO,"")
-//        cv22.put(COL_URL,"")
-//        cv22.put(COL_IMAGE,)
-//        cv22.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv22)
-//        val cv23 = ContentValues()
-//        cv3.put(COL_FULL_INFO,"")
-//        cv3.put(COL_URL,"")
-//        cv3.put(COL_IMAGE,)
-//        cv3.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv3)
-//        val cv24 = ContentValues()
-//        cv24.put(COL_FULL_INFO,"")
-//        cv24.put(COL_URL,"")
-//        cv24.put(COL_IMAGE,)
-//        cv24.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv24)
-//        val cv25 = ContentValues()
-//        cv25.put(COL_FULL_INFO,"")
-//        cv25.put(COL_URL,"")
-//        cv25.put(COL_IMAGE,)
-//        cv25.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv25)
-//        val cv26 = ContentValues()
-//        cv26.put(COL_FULL_INFO,"")
-//        cv26.put(COL_URL,"")
-//        cv26.put(COL_IMAGE,)
-//        cv26.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv26)
-//        val cv27 = ContentValues()
-//        cv27.put(COL_FULL_INFO,"")
-//        cv27.put(COL_URL,"")
-//        cv27.put(COL_IMAGE,)
-//        cv27.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv27)
-//        val cv28 = ContentValues()
-//        cv28.put(COL_FULL_INFO,"")
-//        cv28.put(COL_URL,"")
-//        cv28.put(COL_IMAGE,)
-//        cv28.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv28)
-//        val cv29 = ContentValues()
-//        cv29.put(COL_FULL_INFO,"")
-//        cv29.put(COL_URL,"")
-//        cv29.put(COL_IMAGE,)
-//        cv29.put(COL_SHORT_INFO,"")
-//        db.insert(TABLE_TASK,null,cv29)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -514,6 +359,7 @@ class DBHandler(val context: Context): SQLiteOpenHelper(context,
                 company.short_info = queryResult.getString(queryResult.getColumnIndex(COL_SHORT_INFO))
                 company.image = queryResult.getInt(queryResult.getColumnIndex(COL_IMAGE))
                 company.url = queryResult.getString(queryResult.getColumnIndex(COL_URL))
+                company.name = queryResult.getString(queryResult.getColumnIndex(COL_NAME))
                 result.add(company)
             }while (queryResult.moveToNext())
         }

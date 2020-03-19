@@ -1,4 +1,4 @@
-package ru.fedurovkostya.myapplication
+package ru.Mymoneyloan.ua
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,9 +17,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         dbHandler = DBHandler(this)
         rv_main_list.layoutManager = LinearLayoutManager(this)
-        rv_main_list.adapter = CompanyAdapter(this,dbHandler.getCompanys())
+        rv_main_list.adapter = CompanyAdapter(this, dbHandler.getCompanys())
         btn_main_calculator.setOnClickListener{
-            val intent = Intent(this,Calculator::class.java)
+            val intent = Intent(this, Calculator::class.java)
             startActivity(intent)
         }
     }
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun politika(view: View) {
-        val intent = Intent(this,PolitikaActivity::class.java)
+        val intent = Intent(this, PolitikaActivity::class.java)
         startActivity(intent)
     }
 

@@ -1,4 +1,4 @@
-package ru.fedurovkostya.myapplication
+package ru.Mymoneyloan.ua
 
 import android.app.Application
 import com.onesignal.OneSignal

@@ -1,4 +1,4 @@
-package ru.fedurovkostya.myapplication
+package ru.Mymoneyloan.ua
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,6 @@ import android.view.KeyEvent
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import kotlinx.android.synthetic.main.activity_web.*
 
 class WebActivity : AppCompatActivity() {
 

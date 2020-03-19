@@ -1,4 +1,4 @@
-package ru.fedurovkostya.myapplication
+package ru.Mymoneyloan.ua
 
 class Company {
     var id:Long = -1
@@ -6,4 +6,5 @@ class Company {
     var short_info = ""
     var full_info = ""
     var url = ""
+    var name = ""
 }

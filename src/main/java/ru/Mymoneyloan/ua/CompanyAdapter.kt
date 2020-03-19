@@ -1,4 +1,4 @@
-package ru.fedurovkostya.myapplication
+package ru.Mymoneyloan.ua
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,15 +8,15 @@ import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class CompanyAdapter(val activity: MainActivity, var list:MutableList<Company>): RecyclerView.Adapter<CompanyAdapter.ViewHolder>(){
 
+class CompanyAdapter(val activity: MainActivity, var list:MutableList<Company>): RecyclerView.Adapter<CompanyAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            LayoutInflater.from(activity).inflate(
-                R.layout.main_list_item,
-                parent,
-                false
-            )
+                LayoutInflater.from(activity).inflate(
+                        R.layout.main_list_item,
+                        parent,
+                        false
+                )
         )
     }
 
@@ -26,10 +26,9 @@ class CompanyAdapter(val activity: MainActivity, var list:MutableList<Company>):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Glide.with(activity).load(list[position].image).into(holder.iv_logo)
-        //holder.iv_logo.setImageResource(list[position].image)
         holder.tv_short_descrip.text = list[position].short_info
         holder.tv_act.setOnClickListener {
-            val intent = Intent(activity,CompanyActivity::class.java)
+            val intent = Intent(activity, CompanyActivity::class.java)
             intent.putExtra(INTENT_POSITION,position)
             activity.startActivity(intent)
         }

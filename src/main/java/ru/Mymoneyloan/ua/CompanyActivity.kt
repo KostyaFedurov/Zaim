@@ -1,4 +1,4 @@
-package ru.fedurovkostya.myapplication
+package ru.Mymoneyloan.ua
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -18,14 +18,9 @@ class CompanyActivity : AppCompatActivity() {
         tv_full_info.text = company.full_info
         iv_logo_company.setImageResource(company.image)
         btn_company_act.setOnClickListener {
-            val intent = Intent(this,WebActivity::class.java)
+            val intent = Intent(this, WebActivity::class.java)
             intent.putExtra(INTENT_URL,company.url)
             startActivity(intent)
         }
     }
 }
-/*btn_main.setOnClickListener {
-    val openURL = Intent(Intent.ACTION_VIEW)
-    openURL.data = Uri.parse("https://pxl.leads.su/click/ba501bc1a7b192633c22897f73066ae8")
-    startActivity(openURL)
-}*/

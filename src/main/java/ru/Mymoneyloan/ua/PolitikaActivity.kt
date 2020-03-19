@@ -1,4 +1,4 @@
-package ru.fedurovkostya.myapplication
+package ru.Mymoneyloan.ua
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

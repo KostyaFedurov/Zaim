@@ -1,4 +1,4 @@
-package ru.fedurovkostya.myapplication
+package ru.Mymoneyloan.Mymoneyloan
 
 import org.junit.Test
 
